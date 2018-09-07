@@ -35,11 +35,13 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+
         $this->mapApiRoutes();
 
         $this->mapSiteRoutes();
 
-        //
+        $this->mapUserRoutes();
+
     }
 
     /**
@@ -54,6 +56,14 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('site')
              ->namespace($this->namespace .'\Site')
              ->group(base_path('routes/site.php'));
+    }
+
+    protected function mapUserRoutes()
+    {
+        Route::middleware('user')
+             ->prefix('user')
+             ->namespace($this->namespace .'\User')
+             ->group(base_path('routes/user.php'));
     }
 
     /**
