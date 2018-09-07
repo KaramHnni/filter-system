@@ -11,3 +11,4 @@
 |
 */
 Route::get('/تسجيل','Auth\LoginController@show')->name('login');
+Route::post('/تسجيل','Auth\LoginController@auth');
