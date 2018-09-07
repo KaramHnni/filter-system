@@ -10,4 +10,4 @@
 | contains the "site" middleware group. Now create something great!
 |
 */
-Route::get('/login','Auth\LoginController@show')->name('login');
+Route::get('/تسجيل','Auth\LoginController@show')->name('login');

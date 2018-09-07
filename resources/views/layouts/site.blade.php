@@ -13,9 +13,13 @@
         <link href="{{ asset('/assets/css/font-din-next.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <link href="{{ asset('/assets/css/tailwind.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('/assets/css/site.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/tailwind.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <div class="h-screen bg-green-lightest">
+            @include('components.site.header-menu')
+        </div>
+
     </body>
 </html>
