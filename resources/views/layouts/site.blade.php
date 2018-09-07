@@ -19,6 +19,7 @@
     <body>
         <div class="h-screen bg-green-lightest">
             @include('components.site.header-menu')
+            @yield('main-content')
         </div>
 
     </body>
