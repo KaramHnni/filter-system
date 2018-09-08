@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Speciality extends Model
+class Option extends Model
 {
     public function getStatusAttribute(){
         if($this->status == 0){
@@ -31,7 +31,7 @@ class Speciality extends Model
         $this->save();
     }
 
-    public function options(){
-        return $this->hasMany('\App\Option','speciality_id','id');
+    public function speciality(){
+        return $this->hasOne('\App\Speciality','id','speciality_id');
     }
 }
