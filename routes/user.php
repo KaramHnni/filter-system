@@ -10,3 +10,6 @@
 | contains the "user" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/','User\IndexController@redirectToDashboard');
