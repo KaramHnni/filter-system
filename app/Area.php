@@ -33,5 +33,9 @@ class Area extends Model
         $this->updated_at = now();
         $this->save();
     }
+
+    public function city(){
+        $this->hasOne('\App\City','id','city_id');
+    }
 }
-}
+
