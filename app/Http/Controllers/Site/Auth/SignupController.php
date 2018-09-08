@@ -10,7 +10,7 @@ class SignupController extends Controller
     
     public function show(){
 
-        return view('pages.site.auth.signup.blade.php');
+        return view('pages.site.auth.signup');
     }
 
 

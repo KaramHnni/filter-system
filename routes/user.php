@@ -13,4 +13,4 @@
 
 
 Route::get('/','User\IndexController@redirectToDashboard')->name('home');
-Route::get('/لوحة التحكم','User\DashboardController@show')->name('user.dashboard');
+Route::get('/لوحة-التحكم','User\DashboardController@show')->name('user.dashboard');

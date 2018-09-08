@@ -12,3 +12,6 @@
 */
 Route::get('/تسجيل','Auth\LoginController@show')->name('login');
 Route::post('/تسجيل','Auth\LoginController@auth');
+
+Route::get('/اشتراك','Auth\SignupController@show')->name('signup');
+Route::post('/اشتراك','Auth\SignupController@store');
