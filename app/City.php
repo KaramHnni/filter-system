@@ -38,4 +38,8 @@ class City extends Model
     public function areas(){
         return $this->hasMany('App\Area','city_id','id');
     }
+
+    public function instituts(){
+        return $this->hasMany('App\Institut','city_id','id');
+    }
 }
