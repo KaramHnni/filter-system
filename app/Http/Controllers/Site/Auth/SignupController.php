@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 use App\UserDetails;
@@ -56,8 +57,10 @@ class SignupController extends Controller
         $user_details->created_at = now();
         $user_details->save();
 
-
-
+        $credentials = $request->only('email','password');
+        if(Auth::attempt($credentials)){
+            return redirect()->intended('user/dashboard');
+        }
     }
 
 
