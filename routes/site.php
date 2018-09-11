@@ -16,4 +16,6 @@ Route::post('/تسجيل','Auth\LoginController@auth');
 Route::get('/اشتراك','Auth\SignupController@show')->name('signup');
 Route::post('/اشتراك','Auth\SignupController@store');
 
+Route::get('/خروج','Auth\SignoutController@auth')->name('logout');
+
 

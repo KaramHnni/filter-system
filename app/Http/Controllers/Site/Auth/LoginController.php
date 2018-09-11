@@ -17,7 +17,7 @@ class LoginController extends Controller
     public function auth(Request $request){
         $credentials = $request->only('email','password');
         if(Auth::attempt($credentials)){
-            return redirect()->intended('user/dashboard');
+            return redirect()->intended('user/لوحة-التحكم');
         }
         else{
             return redirect(route('login'))->with(['credentials' => true]);
