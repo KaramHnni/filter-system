@@ -21,6 +21,9 @@
                 @endcomponent
 
             @endif
+            <div class="px-4 mb-8 text-center">
+                <p class="text-2xl font-bold text-blue-darker">تسجيل دخول المدير</p>
+            </div>
         <div class="px-4 mb-8">
            <label class="font-semibold block text-center text-blue-darker mb-4 " for="email">البريد الالكتروني</label>
            <input type="text" name="email" class="border border-grey-light border-solid w-4/5 block mx-auto px-4 py-4 rounded " id="email">

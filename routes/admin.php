@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/Login','Auth\LoginController@show')->name('admin.Login');
+Route::get('/تسجيل','Auth\LoginController@show')->name('admin.login');
