@@ -11,3 +11,4 @@
 |
 */
 
+Route::get('/Login','Auth\LoginController@show')->name('admin.Login');
