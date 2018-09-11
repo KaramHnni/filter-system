@@ -3,7 +3,7 @@
         <div class="flex">
             @guest
            <a href="{{route('login')}}"class="px-4 py-4">التسجيل</a>
-           <a href="#" class="px-4 py-4">الاشتراك</a>
+        <a href="{{route('signup')}}" class="px-4 py-4">الاشتراك</a>
            @endguest
            @auth
            <a href="#"class="px-4 py-4">المستخدم</a>

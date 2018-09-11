@@ -35,7 +35,11 @@ class Area extends Model
     }
 
     public function city(){
-        $this->hasOne('\App\City','id','city_id');
+       return $this->hasOne('\App\City','id','city_id');
+
+    }
+    public function userDetails(){
+        return $this->hasMany('\App\UserDetails','area_id','id');
     }
 }
 

@@ -15,4 +15,8 @@ class Gender extends Model
         }
         
     }
+
+    public function userDetails(){
+        return $this->hasMany('\App\UserDetails','gender_id','id');
+    }
 }
