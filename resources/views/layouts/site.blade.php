@@ -17,7 +17,7 @@
         <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="h-screen bg-green-lightest">
+        <div class="pb-8 bg-green-lightest">
             @include('components.site.header-menu')
             @yield('main-content')
         </div>
