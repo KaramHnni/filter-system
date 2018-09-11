@@ -40,7 +40,7 @@
 
         </div>
         <div class="px-4 my-8">
-                <label class="font-semibold ml-4 text-center text-blue-darker mb-4 " for="gender">الجنس</label>
+                <label class="font-semibold ml-4 text-center text-blue-darker mb-8 " for="gender">الجنس</label>
                 <select  id="gender" name="gender" class="focus:border appearence-none focus:border-solid focus:border-blue-light block  rounded w-full px-4 py-4 mb-8 border border-solid">
                     @foreach($genders as $gender)
                     <option value="{{$gender->id}}" class="block">{{$gender->name}}</option>

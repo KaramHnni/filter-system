@@ -1,0 +1,25 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+
+}
+html{
+    direction: rtl;
+}
+body {
+    position:relative;
+    font-family: 'A Jannat';
+    font-weight: 400;
+}
+a{
+    text-decoration:none;
+    color:black;
+}
+.main-header-dropdown{
+    padding-left:60px;
+    padding-right:60px;
+}
+.main-dropdown-list{
+    top:30px;
+}
