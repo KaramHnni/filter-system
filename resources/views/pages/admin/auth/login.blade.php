@@ -33,7 +33,7 @@
             <input type="password" name="password" class="border border-grey-light border-solid w-4/5 block mx-auto px-4 py-4 rounded" id="password">
         </div>
         <div class="px-4 mb-8">
-                <input type="submit" class="bg-blue-dark text-white  block mx-auto px-8 py-2 rounded" value="دخول">
+                <input type="submit" class="bg-blue-dark hover:bg-blue-darker focus:bg-blue-darkest text-white  block mx-auto px-8 py-2 rounded" value="دخول">
             </div>
        @endslot
     @endcomponent
