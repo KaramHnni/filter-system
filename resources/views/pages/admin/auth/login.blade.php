@@ -16,7 +16,7 @@
 
                 @component('components.alert',['type' => 'danger'])
                         @slot('message')
-                                    بياناتكم لا تتطابق مع سجلاتنا
+                                   بياناتكم لا تتطابق مع سجلاتنا
                         @endslot
                 @endcomponent
 
