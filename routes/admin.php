@@ -12,3 +12,8 @@
 */
 
 Route::get('/تسجيل','Auth\LoginController@show')->name('admin.login');
+Route::post('/تسجيل','Auth\LoginController@auth');
+Route::group(['middleware' => 'auth:admin'],function(){
+Route::get('/','IndexController@redirectToDashboard')->name('admin.home');
+Route::get('/لوحة-التحكم','DashboardController@show')->name('admin.dashboard');
+});
