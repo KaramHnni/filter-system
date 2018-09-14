@@ -1,11 +1,25 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Speciality extends Model
+class Degree extends Model
 {
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table ='degrees';
+    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
     public function getStatusAttribute(){
         if($this->status == 0){
             return "غير مفعل";
@@ -31,7 +45,9 @@ class Speciality extends Model
         $this->save();
     }
 
-    public function options(){
-        return $this->hasMany('\App\Option','speciality_id','id');
+    public function details(){
+        return $this->hasMany('\App\Models\UserDetails','degree_id','id');
     }
+
+    
 }

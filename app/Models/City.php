@@ -1,13 +1,29 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class City extends Model
 {
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table ='cities';
+    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    
     public function getFullNameAttribute(){
-        return "بلدية $this->name" ;
+        return "مدينة $this->name" ;
     }
     public function getStatusAttribute(){
         if($this->status == 0){
@@ -34,12 +50,11 @@ class Area extends Model
         $this->save();
     }
 
-    public function city(){
-       return $this->hasOne('\App\City','id','city_id');
-
+    public function areas(){
+        return $this->hasMany('App\Models\Area','city_id','id');
     }
-    public function userDetails(){
-        return $this->hasMany('\App\UserDetails','area_id','id');
+
+    public function instituts(){
+        return $this->hasMany('App\Models\Institut','city_id','id');
     }
 }
-

@@ -1,11 +1,27 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Option extends Model
+class Institut extends Model
 {
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table ='instituts';
+    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+
     public function getStatusAttribute(){
         if($this->status == 0){
             return "غير مفعل";
@@ -30,8 +46,12 @@ class Option extends Model
         $this->updated_at = now();
         $this->save();
     }
+    
+    public function city(){
+        return $this->hasOne('App\Models\City','id','city_id');
+    }
 
-    public function speciality(){
-        return $this->hasOne('\App\Speciality','id','speciality_id');
+    public function details(){
+        return $this->hasMany('\App\Models\UserDetails','institut_id','id');
     }
 }

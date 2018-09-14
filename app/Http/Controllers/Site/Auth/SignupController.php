@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Http\Controllers\Site\Auth;
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-
-use App\User;
-use App\UserDetails;
-use App\City;
-use App\Gender;
-use App\Institut;
-use App\Degree;
-use App\Occupation;
-use App\Speciality;
+use App\Models\User;
+use App\Models\UserDetails;
+use App\Models\City;
+use App\Models\Gender;
+use App\Models\Institut;
+use App\Models\Degree;
+use App\Models\Occupation;
+use App\Models\Speciality;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

@@ -1,15 +1,28 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class City extends Model
+
+class Administrator extends Authenticatable
 {
+    protected $guard ='admin';
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table ='administrators';
+    
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
-    public function getFullNameAttribute(){
-        return "مدينة $this->name" ;
-    }
     public function getStatusAttribute(){
         if($this->status == 0){
             return "غير مفعل";
@@ -35,11 +48,5 @@ class City extends Model
         $this->save();
     }
 
-    public function areas(){
-        return $this->hasMany('App\Area','city_id','id');
-    }
 
-    public function instituts(){
-        return $this->hasMany('App\Institut','city_id','id');
-    }
 }
