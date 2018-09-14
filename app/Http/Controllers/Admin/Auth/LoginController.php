@@ -17,7 +17,7 @@ class LoginController extends Controller
 
         $credentials =$request->only('email','password');
         if(Auth::guard('admin')->attempt($credentials)){
-            return redirect()->intended('admin/لوحة-التحكم');
+            return redirect()->intended('admin/dashboard');
         }else{
             return redirect()->back()->with(['credentials' => true]);
         }

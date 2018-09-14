@@ -23,6 +23,7 @@ class UserDetails extends Model
 
     
     
+    
     public function area(){
         return $this->hasOne('\App\Models\Area','id','area_id');
     }

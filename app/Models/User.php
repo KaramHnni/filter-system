@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\UserDetails;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,12 +28,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function getStatusAttribute(){
-        if($this->status == 0){
-            return "غير مفعل";
+
+    public function getDetailsAttribute(){
+        return UserDetails::where('user_id',$this->id)->first();
+    }
+
+    public function getStatusNameAttribute(){
+        if($this->status === 0){
+            return 'غير مفعل';
         }
-        if($this->status == 1){
-            return "مفعل";
+        if($this->status === 1){
+            return 'مفعل' ;
         }
     }
 
@@ -52,4 +57,5 @@ class User extends Authenticatable
         $this->updated_at = now();
         $this->save();
     }
+   
 }

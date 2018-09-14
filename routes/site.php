@@ -10,12 +10,12 @@
 | contains the "site" middleware group. Now create something great!
 |
 */
-Route::get('/تسجيل','Auth\LoginController@show')->name('login');
-Route::post('/تسجيل','Auth\LoginController@auth');
+Route::get('/login','Auth\LoginController@show')->name('login');
+Route::post('/login','Auth\LoginController@auth');
 
-Route::get('/اشتراك','Auth\SignupController@show')->name('signup');
-Route::post('/اشتراك','Auth\SignupController@store');
+Route::get('/register','Auth\SignupController@show')->name('signup');
+Route::post('/register','Auth\SignupController@store');
 
-Route::get('/خروج','Auth\SignoutController@auth')->name('logout');
+Route::get('/logout','Auth\SignoutController@auth')->name('logout');
 
 

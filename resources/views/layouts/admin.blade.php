@@ -14,7 +14,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('assets/css/tailwind.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('assets/css/site.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body class="bg-green-lightest">
         <div class="pb-8">

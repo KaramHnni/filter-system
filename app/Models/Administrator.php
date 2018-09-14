@@ -23,7 +23,7 @@ class Administrator extends Authenticatable
      */
     public $timestamps = false;
 
-    public function getStatusAttribute(){
+    public function getStatusNameAttribute(){
         if($this->status == 0){
             return "غير مفعل";
         }

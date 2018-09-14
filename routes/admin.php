@@ -11,12 +11,29 @@
 |
 */
 
-Route::get('/تسجيل','Auth\LoginController@show')->name('admin.login');
-Route::post('/تسجيل','Auth\LoginController@auth');
-Route::get('/خروج','Auth\SignoutController@auth')->name('admin.logout');
+Route::get('/login','Auth\LoginController@show')->name('admin.login');
+Route::post('/login','Auth\LoginController@auth');
+Route::get('/logout','Auth\SignoutController@auth')->name('admin.logout');
 
 Route::group(['middleware' => 'auth:admin'],function(){
 Route::get('/','IndexController@redirectToDashboard')->name('admin.home');
-Route::get('/لوحة-التحكم','DashboardController@show')->name('admin.dashboard');
+Route::get('/dashboard','DashboardController@show')->name('admin.dashboard');
+Route::group(['prefix' => 'users', 'namespace' => 'Users'],function(){
+
+    Route::get('/','IndexController@show')->name('admin.users');
+
+});
+Route::group(['prefix' => 'administrators', 'namespace' => 'Administrators'],function(){
+
+    Route::get('/','IndexController@show')->name('admin.administrators');
+
+});
+Route::group(['prefix' => 'cities', 'namespace' => 'Cities'],function(){
+
+    Route::get('/','IndexController@show')->name('admin.cities');
+
+});
+
+
 
 });
