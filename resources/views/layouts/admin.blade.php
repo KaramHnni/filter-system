@@ -18,7 +18,7 @@
     </head>
     <body class="bg-green-lightest">
         <div class="pb-8">
-            @include('components.site.header-menu')
+            @include('components.admin.header-menu')
             @yield('main-content')
         </div>
 
