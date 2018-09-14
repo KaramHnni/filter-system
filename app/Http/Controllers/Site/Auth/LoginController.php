@@ -16,7 +16,7 @@ class LoginController extends Controller
 
     public function auth(Request $request){
         $credentials = request()->only('email','password');
-        if(Auth::attempt($credentials)){
+        if(Auth::guard('web')->attempt($credentials)){
             return redirect()->intended('user/لوحة-التحكم');
         }
         else{
