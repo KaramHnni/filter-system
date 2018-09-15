@@ -31,7 +31,8 @@ Route::group(['prefix' => 'administrators', 'namespace' => 'Administrators'],fun
 Route::group(['prefix' => 'cities', 'namespace' => 'Cities'],function(){
 
     Route::get('/','IndexController@show')->name('admin.cities');
-
+    Route::get('/create','CreateController@show')->name('admin.cities.create');
+    Route::post('/create','CreateController@store');
 });
 
 

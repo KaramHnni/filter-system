@@ -8,7 +8,7 @@
     <div class="w-full mx-auto py-2 bg-white shadow">
     <div class="flex justify-between items-center mx-4">
         <h1 class="text-grey-dark mb-4 ">المدن</h1>
-        <a href="#" class="bg-blue-dark text-white px-2 py-2 hover:bg-blue-darker " >
+        <a href="{{route('admin.cities.create')}}" class="bg-blue-dark text-white px-2 py-2 hover:bg-blue-darker " >
                 <i class="fas fa-plus"></i>
 
         </a>

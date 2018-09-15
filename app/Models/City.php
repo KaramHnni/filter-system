@@ -50,6 +50,15 @@ class City extends Model
         $this->save();
     }
 
+    public static function  store($request){
+        $city = new self;
+        $city->name = $request->name;
+        $city->slug = $request->slug;
+        $city->status = $request->status;
+        $city->updated_at = now();
+        $city->save();
+    }
+
     public function areas(){
         return $this->hasMany('App\Models\Area','city_id','id');
     }
