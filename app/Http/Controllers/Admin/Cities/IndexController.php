@@ -11,7 +11,7 @@ class IndexController extends Controller
         
 
         return view('pages.admin.cities.show')->with([
-            'cities' => City::All(),
+            'cities' => City::all(),
         ]
         );
     }
