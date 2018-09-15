@@ -31,8 +31,19 @@ Route::group(['prefix' => 'administrators', 'namespace' => 'Administrators'],fun
 Route::group(['prefix' => 'cities', 'namespace' => 'Cities'],function(){
 
     Route::get('/','IndexController@show')->name('admin.cities');
+
     Route::get('/create','CreateController@show')->name('admin.cities.create');
     Route::post('/create','CreateController@store');
+
+    Route::get('/{id}/edit','EditController@show')->name('admin.cities.edit');
+    Route::post('/{id}/edit','EditController@update');
+
+    Route::get('/{id}/active','StatusController@active')->name('admin.cities.status.active');
+    Route::get('/{id}/inactive','StatusController@inactive')->name('admin.cities.status.inactive');
+    
+    Route::get('/{id}/delete','DeleteController@delete')->name('admin.cities.delete');
+
+
 });
 
 

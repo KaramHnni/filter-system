@@ -55,8 +55,16 @@ class City extends Model
         $city->name = $request->name;
         $city->slug = $request->slug;
         $city->status = $request->status;
+        $city->created_at = now();
         $city->updated_at = now();
         $city->save();
+    }
+
+    public function updateDetails($request){
+        $this->name = $request->name;
+        $this->slug = $request->slug;
+        $this->updated_at = now();
+        $this->save();
     }
 
     public function areas(){
