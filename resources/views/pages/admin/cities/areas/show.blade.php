@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('page-title')
-المدن
+المناطق
 @endsection
 @section('main-content')
 <div class="flex">
@@ -42,45 +42,50 @@
                 @endslot
             @endcomponent
         @endif
-        <h1 class="text-grey-dark mb-4 ">المدن</h1>
-        <a href="{{route('admin.cities.create')}}" class="bg-blue-dark text-white px-2 py-2 hover:bg-blue-darker " >
+        <h1 class="text-grey-dark mb-4 ">المناطق</h1>
+         <a href="{{route('admin.cities.areas.create' , ['city_id' => $city->id])}}" class="bg-blue-dark text-white px-2 py-2 hover:bg-blue-darker " >
                 <i class="fas fa-plus"></i>
 
         </a>
     </div>
     <div class="bg-grey-lightest">
+        @if($city->areas->count() > 0)
     <table class=" text-right w-full table-collapse">
         <thead class="bg-grey-lighter">
             <tr >
-            <th class=" px-4 py-2 ">المدينة</th>
+            <th class=" px-4 py-2 ">المنطقة</th>
             <th class=" px-4 py-2">الحالة</th>
-            <th class=" px-4 py-2">المناطق</th>
+            <th class=" px-4 py-2">المدينة</th>
             <th class="px-4 py-2">الادوات</th>
             <tr>
         </thead>
         <tbody class="bg-grey-lightest">
-            @foreach($cities as $city)
+            @foreach($city->areas as $area)
             <tr>
-        <td class="px-4 py-2 border-b border-solid border-grey-light">{{$city->name}} {{$city->slug}}</td>
-        <td class="px-4 py-2 border-b border-solid border-grey-light">{{$city->status_name}}</td>
-        <td class="px-4 py-2 border-b border-solid border-grey-light"><a href="{{route('admin.cities.areas' , $city->id)}}">{{$city->areas->count()}}</a></td>
+        <td class="px-4 py-2 border-b border-solid border-grey-light">{{$area->name}} {{$area->slug}}</td>
+        <td class="px-4 py-2 border-b border-solid border-grey-light">{{$area->status_name}}</td>
+        <td class="px-4 py-2 border-b border-solid border-grey-light">{{$area->city->name}}</td>
         <td class="px-4 py-2 border-b border-solid border-grey-light flex justify-between">
-            @if($city->status == 0)
-          <a href="{{route('admin.cities.active', $city->id )}}" class="text-green-light">تفعيل</a>
+            @if($area->status == 0)
+            <a href="{{route('admin.cities.areas.active',['city_id' => $area->city->id , 'area_id' => $area->id ])}}" class="text-green-light">تفعيل</a>
             @else
 
-                <a href="{{route('admin.cities.inactive', $city->id )}}" class="text-red-light">الغاء</a>
+            <a href="{{route('admin.cities.areas.inactive',['city_id' => $area->city->id , 'area_id' => $area->id ])}}" class="text-red-light">الغاء</a>
 
             @endif
 
-        <a href="{{route('admin.cities.edit' ,  $city->id  )  }}" class="text-blue-dark">تعديل</a>
-        <a href="{{route('admin.cities.delete' , $city->id )  }}" class="text-red-light">حذف</a>
+        <a href="{{route('admin.cities.areas.edit', ['city_id' => $area->city->id , 'area_id' => $area->id ])}}" class="text-blue-dark">تعديل</a>
+        <a href="{{route('admin.cities.areas.delete' , ['city_id' => $area->city->id , 'area_id' => $area->id])}}" class="text-red-light">حذف</a>
 
         </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    @else
+    <h3 class=" text-center py-4 text-grey-dark">لا يوجد اي منطقة في هته المدينة </h3>
+    @endif
+
     </div>
 </div>
 </div>

@@ -25,7 +25,7 @@ class Area extends Model
         return "بلدية $this->name" ;
     }
 
-    public function getStatusAttribute(){
+    public function getStatusNameAttribute(){
         if($this->status == 0){
             return "غير مفعل";
         }
@@ -46,6 +46,23 @@ class Area extends Model
 
     public function setInactive(){
         $this->status = 0;
+        $this->updated_at = now();
+        $this->save();
+    }
+
+    public static function store($request){
+        $area = new self;
+        $area->name = $request->name;
+        $area->slug = $request->slug;
+        $area->status = $request->status;
+        $area->city_id = $request->city_id;
+        $area->created_at = now();
+        $area->save();
+    }
+
+    public function updateDetails($request){
+        $this->name = $request->name;
+        $this->slug = $request->slug;
         $this->updated_at = now();
         $this->save();
     }
