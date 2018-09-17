@@ -48,7 +48,12 @@
 
         </a>
     </div>
+    <form method="GET" action={{url()->current()}} class="my-2 flex justify-center ">
+            <input type="text" name="keyword" placeholder="البحث"class="bg-white rounded  border border-solid mx-2 px-2 py-2  ">
+            <input type="submit" value="بحث" class="px-4 py-2 bg-blue-light rounded text-white" >
+        </form>
     <div class="bg-grey-lightest">
+        
     <table class=" text-right w-full table-collapse">
         <thead class="bg-grey-lighter">
             <tr >

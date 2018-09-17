@@ -38,6 +38,17 @@ class City extends Model
         return self::where('status',1);
     }
 
+    public static function filter($request){
+        $cities = new self;
+        if($request->keyword){
+        $keyword = $request->keyword; 
+        $cities = $cities->where(function($query) use ($keyword){
+            $query->where('slug','Like','%' . $keyword . '%');
+            $query->orWhere('name','Like','%' . $keyword . '%');
+        });
+    }
+    return $cities;
+    }
     public function setActive(){
         $this->status = 1;
         $this->updated_at = now();

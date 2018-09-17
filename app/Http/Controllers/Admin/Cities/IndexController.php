@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function show(){
+    public function show(Request $request){
         
-
+        
         return view('pages.admin.cities.show')->with([
-            'cities' => City::all(),
+            'cities' => City::filter($request)->get(),
         ]
         );
     }
