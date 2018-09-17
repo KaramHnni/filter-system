@@ -11,18 +11,7 @@ class IndexController extends Controller
 
         $cities = City::filter($request);
 
-        if($request->sort){
-            if($request->sort =='latest'){
-                $cities = $cities->orderBy('id','DESC')->get();
-            }
-            if($request->sort =='oldest'){
-                $cities = $cities->orderBy('id','ASC')->get();
-                
-            }
-        }
-        if(!$request->sort){
-            $cities = $cities->get();
-        }
+        $cities = $cities->sortBy($request)->get();
         
 
 

@@ -55,7 +55,7 @@
             <input type="text" name="keyword" placeholder="البحث"class="bg-white rounded  border border-solid mx-2 px-2 py-2  ">
             <div class="flex justify-around items-center">
                 <label for="status" class="block mx-4 ">الحالة</label>
-                <select id="status" name="status" class="border border-solid border-blue-dark rounded block">
+                <select onchange="this.form.submit()" id="status" name="status" class="border border-solid border-blue-dark rounded block">
                     <option value="0">الكل</option>
                     <option value="active">مفعل</option>
                     <option value="inactive">غير مفعل</option>
@@ -67,6 +67,7 @@
                         <option value="0">الكل</option>
                         <option value="latest">الاحدث</option>
                         <option value="oldest">ألاقدم</option>
+
 
                         
                     </select>
