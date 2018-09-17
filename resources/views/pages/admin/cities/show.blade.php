@@ -48,8 +48,19 @@
 
         </a>
     </div>
-    <form method="GET" action={{url()->current()}} class="my-2 flex justify-center ">
+    <form method="GET" action={{url()->current()}} class="my-2 flex justify-around ">
+            @foreach(request()->query() as $key =>$value)
+    <input type="hidden" name="{{$key}}" value="{{$value}}">
+            @endforeach
             <input type="text" name="keyword" placeholder="البحث"class="bg-white rounded  border border-solid mx-2 px-2 py-2  ">
+            <div class="flex justify-around items-center">
+                <label for="status" class="block mx-4 ">الحالة</label>
+                <select id="status" name="status" class="border border-solid border-blue-dark rounded block">
+                    <option value="0">---- يرجى تحديد الحالة ----</option>
+                    <option value="active">مفعل</option>
+                    <option value="inactive">غير مفعل</option>
+                </select>
+            </div>
             <input type="submit" value="بحث" class="px-4 py-2 bg-blue-light rounded text-white" >
         </form>
     <div class="bg-grey-lightest">

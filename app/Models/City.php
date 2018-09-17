@@ -40,6 +40,7 @@ class City extends Model
 
     public static function filter($request){
         $cities = new self;
+        $cities = $cities->filterByStatus($request);
         if($request->keyword){
         $keyword = $request->keyword; 
         $cities = $cities->where(function($query) use ($keyword){
@@ -48,6 +49,19 @@ class City extends Model
         });
     }
     return $cities;
+    }
+
+    public function filterByStatus($request){
+        $cities = $this;
+        if($request->status){
+        if($request->status == 'active'){
+            $cities = $cities->where('status',1);
+        }
+        if($request->status == "inactive"){
+            $cities = $cities->where('status',0);
+        }
+    }
+        return $cities;
     }
     public function setActive(){
         $this->status = 1;
