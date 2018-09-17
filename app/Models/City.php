@@ -65,22 +65,6 @@ class City extends Model
     }
         return $cities;
     }
-    public function sortBy($request){
-        $cities = new self;
-
-        if($request->sort){
-            if($request->sort =='latest'){
-                $cities = $cities->orderBy('id','DESC');
-            }
-            if($request->sort =='oldest'){
-                $cities = $cities->orderBy('id','ASC');
-            }
-            return $cities;
-        }
-        if(!$request->sort){
-            return $cities;
-        }
-    }
     public function setActive(){
         $this->status = 1;
         $this->updated_at = now();
