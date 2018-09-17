@@ -56,11 +56,21 @@
             <div class="flex justify-around items-center">
                 <label for="status" class="block mx-4 ">الحالة</label>
                 <select id="status" name="status" class="border border-solid border-blue-dark rounded block">
-                    <option value="0">---- يرجى تحديد الحالة ----</option>
+                    <option value="0">الكل</option>
                     <option value="active">مفعل</option>
                     <option value="inactive">غير مفعل</option>
                 </select>
             </div>
+            <div class="flex justify-around items-center">
+                    <label for="sort" class="block mx-4 ">ترتيب حسب</label>
+                    <select onchange="this.form.submit()" id="sort" name="sort" class="border border-solid border-blue-dark rounded block">
+                        <option value="0">الكل</option>
+                        <option value="latest">الاحدث</option>
+                        <option value="oldest">ألاقدم</option>
+
+                        
+                    </select>
+                </div>
             <input type="submit" value="بحث" class="px-4 py-2 bg-blue-light rounded text-white" >
         </form>
     <div class="bg-grey-lightest">

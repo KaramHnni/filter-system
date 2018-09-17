@@ -48,7 +48,19 @@ class City extends Model
             $query->orWhere('name','Like','%' . $keyword . '%');
         });
     }
-    return $cities;
+    if($request->sort){
+        if($request->sort =='latest'){
+            $cities->orderBy('id','DESC')->get();
+            return $cities;
+        }
+        if($request->sort =='oldest'){
+            $cities->orderBy('id','DESC')->get();
+            return $cities;
+        }
+    }
+    if(!$request->sort){
+        return $cities;
+    }
     }
 
     public function filterByStatus($request){
