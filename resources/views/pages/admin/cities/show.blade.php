@@ -55,18 +55,18 @@
             <input type="text" name="keyword" placeholder="البحث"class="bg-white rounded  border border-solid mx-2 px-2 py-2  ">
             <div class="flex justify-around items-center">
                 <label for="status" class="block mx-4 ">الحالة</label>
-            <select onchange="this.form.submit()" id="status" value="{{request('status')}}" name="status" class="border border-solid border-blue-dark rounded block">
-                    <option value="0">الكل</option>
-                    <option value="active">مفعل</option>
-                    <option value="inactive">غير مفعل</option>
+                <select onchange="this.form.submit()" id="status" name="status" class="border border-solid border-blue-dark rounded block">
+                    <option value="">الكل</option>
+                <option value="active" {{request('status') == 'active'? 'selected' : ''}}>مفعل</option>
+                    <option value="inactive" {{request('status') == 'inactive'? 'selected' : ''}}>غير مفعل</option>
                 </select>
             </div>
             <div class="flex justify-around items-center">
                     <label for="sort" class="block mx-4 ">ترتيب حسب</label>
                     <select onchange="this.form.submit()" id="sort" name="sort" class="border border-solid border-blue-dark rounded block">
-                        <option value="0">الكل</option>
-                        <option value="latest">الاحدث</option>
-                        <option value="oldest">ألاقدم</option>
+                        <option value="">الكل</option>
+                        <option value="latest" {{request('sort') == 'latest'? 'selected' : ''}}>الاحدث</option>
+                        <option value="oldest" {{request('sort') == 'oldest'? 'selected' : ''}}>ألاقدم</option>
 
 
                         
