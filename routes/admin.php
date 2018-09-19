@@ -76,6 +76,21 @@ Route::group(['prefix' => 'instituts', 'namespace' => 'Instituts'],function(){
     Route::get('/{id}/delete','DeleteController@delete')->name('admin.instituts.delete');
 
 });
+Route::group(['prefix' => 'degrees', 'namespace' => 'Degrees'],function(){
+
+    Route::get('/','IndexController@show')->name('admin.degrees');
+
+    Route::get('/create','CreateController@show')->name('admin.degrees.create');
+    Route::post('/create','CreateController@store');
+
+    Route::get('/{id}/edit','EditController@show')->name('admin.degrees.edit');
+    Route::post('/{id}/edit','EditController@update');
+
+    Route::get('/{id}/active','StatusController@active')->name('admin.degrees.active');
+    Route::get('/{id}/inactive','StatusController@inactive')->name('admin.degrees.inactive');
+    Route::get('/{id}/delete','DeleteController@delete')->name('admin.degrees.delete');
+
+});
 
 
 
