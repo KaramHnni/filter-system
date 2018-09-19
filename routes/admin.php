@@ -73,6 +73,8 @@ Route::group(['prefix' => 'instituts', 'namespace' => 'Instituts'],function(){
 
     Route::get('/{id}/active','StatusController@active')->name('admin.instituts.active');
     Route::get('/{id}/inactive','StatusController@inactive')->name('admin.instituts.inactive');
+    Route::get('/{id}/delete','DeleteController@delete')->name('admin.instituts.delete');
+
 });
 
 
