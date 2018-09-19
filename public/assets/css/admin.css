@@ -16,4 +16,18 @@ a{
     text-decoration:none;
     color:black;
 }
+.Fade{
+    animation: fade 1s;
 
+}
+
+@keyframes fade{
+    from{
+        opacity:1;
+    }
+    to{
+        opacity:0;
+        display:none;
+    }
+    
+}

@@ -21,6 +21,6 @@
             @include('components.admin.header-menu')
             @yield('main-content')
         </div>
-
+    <script src="{{asset('/assets/js/admin.js')}}"></script>
     </body>
 </html>

@@ -61,6 +61,19 @@ Route::group(['prefix' => 'cities', 'namespace' => 'Cities'],function(){
 
 
 });
+Route::group(['prefix' => 'instituts', 'namespace' => 'Instituts'],function(){
+
+    Route::get('/','IndexController@show')->name('admin.instituts');
+
+    Route::get('/create','CreateController@show')->name('admin.instituts.create');
+    Route::post('/create','CreateController@store');
+
+    Route::get('/{id}/edit','EditController@show')->name('admin.instituts.edit');
+    Route::post('/{id}/edit','EditController@update');
+
+    Route::get('/{id}/active','StatusController@active')->name('admin.instituts.active');
+    Route::get('/{id}/inactive','StatusController@inactive')->name('admin.instituts.inactive');
+});
 
 
 
